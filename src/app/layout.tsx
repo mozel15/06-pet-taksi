@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+import { Fraunces, Inter } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { FloatingContact } from "@/components/FloatingContact";
+import { site } from "@/lib/site";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+  display: "swap",
+});
+
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+  },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://06pettaksi.example.com",
+  ),
+  title: {
+    default: `${site.name} | Ankara Pet Taksi — Türkiye geneli`,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    locale: "tr_TR",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="tr" className={`${inter.variable} ${display.variable}`}>
+      <body className="min-h-dvh font-sans">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <FloatingContact />
+      </body>
+    </html>
+  );
+}
