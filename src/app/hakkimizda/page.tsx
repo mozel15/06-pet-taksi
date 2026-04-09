@@ -24,8 +24,8 @@ export default function HakkimizdaPage() {
         </div>
       </section>
       <div className="mx-auto mt-12 max-w-4xl px-4 sm:px-6">
-      <div className="premium-card section-reveal p-7 sm:p-9">
-      <div className="space-y-4 text-base leading-relaxed text-cab-800/90">
+      <div className="premium-card-dark section-reveal p-7 sm:p-9">
+      <div className="space-y-4 text-base leading-relaxed text-cab-100">
         <p>
           <strong>{site.name}</strong>, evcil hayvanların güvenli ve sakin bir
           şekilde taşınması için çalışan bir pet taksi hizmetidir. Merkezimiz{" "}

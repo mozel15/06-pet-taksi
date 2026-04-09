@@ -56,12 +56,12 @@ export default function SssPage() {
         {faqs.map((item) => (
           <div
             key={item.q}
-            className="premium-card section-reveal p-6"
+            className="premium-card-dark section-reveal p-6"
           >
-            <dt className="font-display text-lg font-semibold text-cab-950">
+            <dt className="font-display text-lg font-semibold text-white">
               {item.q}
             </dt>
-            <dd className="mt-2 text-sm leading-relaxed text-cab-800/85">{item.a}</dd>
+            <dd className="mt-2 text-sm leading-relaxed text-cab-200">{item.a}</dd>
           </div>
         ))}
       </dl>

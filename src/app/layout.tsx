@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${inter.variable} ${display.variable}`}>
-      <body className="min-h-dvh font-sans">
+      <body className="page-shell min-h-dvh font-sans">
         <Header />
         <main>{children}</main>
         <Footer />

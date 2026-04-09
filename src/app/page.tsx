@@ -129,32 +129,32 @@ export default function HomePage() {
           {services.map((item) => (
             <article
               key={item.title}
-              className="premium-card section-reveal p-6"
+              className="premium-card-dark section-reveal p-6"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Hizmet</p>
-              <h2 className="mt-3 font-display text-2xl font-semibold text-cab-950">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-cab-700">{item.text}</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">Hizmet</p>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-white">{item.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-cab-200">{item.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-cab-200 bg-white">
+      <section className="border-y border-cab-800 bg-cab-950/55">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Neden biz</p>
-              <h2 className="mt-2 font-display text-3xl font-semibold text-cab-950">Güven, disiplin ve iletişim</h2>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">Neden biz</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-white">Güven, disiplin ve iletişim</h2>
             </div>
-            <Link href="/hizmetler" className="text-sm font-semibold text-cab-900 underline-offset-4 hover:text-brand-700 hover:underline">
+            <Link href="/hizmetler" className="text-sm font-semibold text-cab-100 underline-offset-4 hover:text-brand-300 hover:underline">
               Tüm hizmet detaylarını gör
             </Link>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {differentiators.map((item) => (
-              <div key={item.title} className="premium-card p-5">
-                <h3 className="font-display text-xl font-semibold text-cab-950">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-cab-700">{item.text}</p>
+              <div key={item.title} className="premium-card-dark p-5">
+                <h3 className="font-display text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-cab-200">{item.text}</p>
               </div>
             ))}
           </div>
@@ -162,29 +162,29 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
-        <div className="premium-card p-6 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Süreç</p>
-          <h2 className="mt-2 font-display text-3xl font-semibold text-cab-950">Transfer nasıl ilerler?</h2>
+        <div className="premium-card-dark p-6 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">Süreç</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold text-white">Transfer nasıl ilerler?</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {processSteps.map((step) => (
-              <div key={step.title} className="premium-card bg-cab-50 p-5">
-                <h3 className="text-sm font-semibold text-cab-950">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-cab-700">{step.text}</p>
+              <div key={step.title} className="premium-card-dark bg-cab-900/65 p-5">
+                <h3 className="text-sm font-semibold text-white">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-cab-200">{step.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-y border-cab-200 bg-gradient-to-b from-white to-brand-50/40">
+      <section className="border-y border-cab-800 bg-gradient-to-b from-cab-950/80 to-cab-900/70">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="font-display text-3xl font-semibold text-cab-950">Yakında</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-cab-700">
+          <h2 className="font-display text-3xl font-semibold text-white">Yakında</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-cab-200">
             Marka gücünü adım adım büyütüyoruz. Bir sonraki fazda web sitemizi daha operasyonel hale getireceğiz.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-3">
             {nextPhase.map((item) => (
-              <li key={item} className="rounded-xl border border-dashed border-cab-300 bg-white/90 px-4 py-4 text-sm text-cab-800">
+              <li key={item} className="premium-card-dark rounded-xl border-dashed px-4 py-4 text-sm text-cab-100">
                 {item}
               </li>
             ))}

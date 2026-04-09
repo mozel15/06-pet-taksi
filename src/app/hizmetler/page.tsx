@@ -79,47 +79,47 @@ export default function HizmetlerPage() {
         {highlights.map((item) => (
           <li
             key={item.title}
-            className="premium-card section-reveal flex flex-col p-5"
+            className="premium-card-dark section-reveal flex flex-col p-5"
           >
             <span className="text-2xl" aria-hidden>
               {item.emoji}
             </span>
-            <span className="mt-3 font-display text-lg font-semibold text-cab-950">
+            <span className="mt-3 font-display text-lg font-semibold text-white">
               {item.title}
             </span>
-            <p className="mt-2 text-sm leading-relaxed text-cab-800/85">
+            <p className="mt-2 text-sm leading-relaxed text-cab-200">
               {item.text}
             </p>
           </li>
         ))}
       </ul>
 
-      <h2 className="mt-16 font-display text-xl font-semibold text-cab-950 sm:text-2xl">
+      <h2 className="mt-16 font-display text-xl font-semibold text-white sm:text-2xl">
         Detaylı bilgi
       </h2>
       <ul className="mt-6 space-y-4">
         {detailBlocks.map((item) => (
           <li
             key={item.title}
-            className="premium-card p-6"
+            className="premium-card-dark p-6"
           >
-            <h3 className="font-display text-lg font-semibold text-cab-950">
+            <h3 className="font-display text-lg font-semibold text-white">
               {item.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-cab-800/85">
+            <p className="mt-2 text-sm leading-relaxed text-cab-200">
               {item.body}
             </p>
           </li>
         ))}
       </ul>
 
-      <div className="premium-card mt-10 p-6 sm:p-8">
-        <p className="text-sm font-semibold text-cab-950">Not</p>
-        <p className="mt-2 text-sm text-cab-800/85">
+      <div className="premium-card-dark mt-10 p-6 sm:p-8">
+        <p className="text-sm font-semibold text-white">Not</p>
+        <p className="mt-2 text-sm text-cab-200">
           Bu sayfa bilgilendirme amaçlıdır. Fiyat, müsaitlik ve özel talepler için{" "}
           <Link
             href="/iletisim"
-            className="font-semibold text-cab-900 underline hover:text-brand-700"
+            className="font-semibold text-brand-300 underline hover:text-brand-200"
           >
             iletişim
           </Link>{" "}

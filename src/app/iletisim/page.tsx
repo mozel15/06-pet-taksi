@@ -32,11 +32,11 @@ export default function IletisimPage() {
 
       <div className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="premium-card section-reveal p-8">
-          <h2 className="font-display text-xl font-semibold text-cab-950">
+        <div className="premium-card-dark section-reveal p-8">
+          <h2 className="font-display text-xl font-semibold text-white">
             Telefon
           </h2>
-          <p className="mt-2 text-sm text-cab-700">
+          <p className="mt-2 text-sm text-cab-200">
             Doğrudan arayıp ulaşabilirsiniz.
           </p>
           <a
@@ -46,11 +46,11 @@ export default function IletisimPage() {
             {site.phoneDisplay}
           </a>
         </div>
-        <div className="premium-card section-reveal p-8">
-          <h2 className="font-display text-xl font-semibold text-cab-950">
+        <div className="premium-card-dark section-reveal p-8">
+          <h2 className="font-display text-xl font-semibold text-white">
             WhatsApp
           </h2>
-          <p className="mt-2 text-sm text-cab-700">
+          <p className="mt-2 text-sm text-cab-200">
             Konum, tarih ve evcil hayvan türü bilgisini yazmanız süreci
             hızlandırır.
           </p>
@@ -65,17 +65,17 @@ export default function IletisimPage() {
         </div>
       </div>
 
-      <div className="premium-card mt-8 border-dashed p-6">
-        <p className="text-sm font-semibold text-cab-950">E-posta (isteğe bağlı)</p>
+      <div className="premium-card-dark mt-8 border-dashed p-6">
+        <p className="text-sm font-semibold text-white">E-posta (isteğe bağlı)</p>
         <a
           href={`mailto:${site.email}`}
-          className="mt-2 inline-block text-sm font-medium text-cab-800 hover:text-brand-700 hover:underline"
+          className="mt-2 inline-block text-sm font-medium text-cab-100 hover:text-brand-300 hover:underline"
         >
           {site.email}
         </a>
-        <p className="mt-3 text-xs text-cab-600">
+        <p className="mt-3 text-xs text-cab-300">
           E-posta adresini gerçek bir adresle değiştirmek için{" "}
-          <code className="rounded bg-white px-1 py-0.5 text-[0.8rem]">
+          <code className="rounded bg-cab-900 px-1 py-0.5 text-[0.8rem] text-brand-200">
             NEXT_PUBLIC_EMAIL
           </code>{" "}
           ortam değişkenini kullanın.
