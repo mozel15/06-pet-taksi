@@ -129,7 +129,7 @@ export default function HomePage() {
           {services.map((item) => (
             <article
               key={item.title}
-              className="rounded-3xl border border-cab-200 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-brand-400/70"
+              className="premium-card section-reveal p-6"
             >
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Hizmet</p>
               <h2 className="mt-3 font-display text-2xl font-semibold text-cab-950">{item.title}</h2>
@@ -152,7 +152,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {differentiators.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-sand-50 p-5 ring-1 ring-cab-100">
+              <div key={item.title} className="premium-card p-5">
                 <h3 className="font-display text-xl font-semibold text-cab-950">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-cab-700">{item.text}</p>
               </div>
@@ -162,12 +162,12 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
-        <div className="rounded-3xl border border-cab-200 bg-white p-6 shadow-card sm:p-10">
+        <div className="premium-card p-6 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Süreç</p>
           <h2 className="mt-2 font-display text-3xl font-semibold text-cab-950">Transfer nasıl ilerler?</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {processSteps.map((step) => (
-              <div key={step.title} className="rounded-2xl border border-cab-200 bg-cab-50 p-5">
+              <div key={step.title} className="premium-card bg-cab-50 p-5">
                 <h3 className="text-sm font-semibold text-cab-950">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-cab-700">{step.text}</p>
               </div>

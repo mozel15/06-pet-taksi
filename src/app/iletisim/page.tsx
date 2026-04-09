@@ -14,19 +14,25 @@ export default function IletisimPage() {
   );
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <p className="text-sm font-medium text-cab-700">İletişim</p>
-      <h1 className="mt-2 font-display text-3xl font-semibold text-cab-950 sm:text-4xl">
-        Bize ulaşın
-      </h1>
-      <p className="mt-4 max-w-2xl text-cab-800/85">
-        En hızlı yol WhatsApp ve telefon. Çalışma saatleri ve müsaitlik
-        güncellemeleri için mesaj bırakmanız yeterli; size en kısa sürede dönüş
-        yapılır.
-      </p>
+    <div className="pb-16">
+      <section className="border-b border-cab-200 bg-cab-950 text-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
+          <p className="inline-flex rounded-full border border-brand-500/40 bg-cab-900/80 px-3 py-1 text-xs font-semibold tracking-wider text-brand-300">
+            İLETİŞİM
+          </p>
+          <h1 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+            Hızlı iletişim, net plan
+          </h1>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-cab-200 sm:text-base">
+            Telefon veya WhatsApp üzerinden yazın; müsaitlik ve tarih bilgisiyle
+            size hızlıca dönüş sağlayalım.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-3xl border border-cab-100 bg-white p-8 shadow-card">
+      <div className="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="premium-card section-reveal p-8">
           <h2 className="font-display text-xl font-semibold text-cab-950">
             Telefon
           </h2>
@@ -40,7 +46,7 @@ export default function IletisimPage() {
             {site.phoneDisplay}
           </a>
         </div>
-        <div className="rounded-3xl border border-cab-100 bg-white p-8 shadow-card">
+        <div className="premium-card section-reveal p-8">
           <h2 className="font-display text-xl font-semibold text-cab-950">
             WhatsApp
           </h2>
@@ -59,7 +65,7 @@ export default function IletisimPage() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl border border-dashed border-cab-300 bg-sand-50/80 p-6">
+      <div className="premium-card mt-8 border-dashed p-6">
         <p className="text-sm font-semibold text-cab-950">E-posta (isteğe bağlı)</p>
         <a
           href={`mailto:${site.email}`}
@@ -74,6 +80,7 @@ export default function IletisimPage() {
           </code>{" "}
           ortam değişkenini kullanın.
         </p>
+      </div>
       </div>
     </div>
   );

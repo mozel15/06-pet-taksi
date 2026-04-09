@@ -32,23 +32,31 @@ const faqs = [
 
 export default function SssPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-      <p className="text-sm font-medium text-cab-700">SSS</p>
-      <h1 className="mt-2 font-display text-3xl font-semibold text-cab-950 sm:text-4xl">
-        Sık sorulan sorular
-      </h1>
-      <p className="mt-4 text-cab-800/85">
-        Aklınıza takılan bir şey olursa{" "}
-        <Link href="/iletisim" className="font-semibold text-cab-900 underline hover:text-brand-700">
-          iletişim
-        </Link>{" "}
-        sayfasından yazabilirsiniz.
-      </p>
-      <dl className="mt-10 space-y-4">
+    <div className="pb-16">
+      <section className="border-b border-cab-200 bg-gradient-to-b from-cab-950 to-cab-900 text-white">
+        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16">
+          <p className="inline-flex rounded-full border border-brand-500/40 bg-cab-900/80 px-3 py-1 text-xs font-semibold tracking-wider text-brand-300">
+            SSS
+          </p>
+          <h1 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+            Sık sorulan sorular
+          </h1>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-cab-200 sm:text-base">
+            Aklınıza takılan bir şey olursa{" "}
+            <Link href="/iletisim" className="font-semibold text-brand-300 underline hover:text-brand-200">
+              iletişim
+            </Link>{" "}
+            sayfasından yazabilirsiniz.
+          </p>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-4xl px-4 pt-12 sm:px-6">
+      <dl className="space-y-4">
         {faqs.map((item) => (
           <div
             key={item.q}
-            className="rounded-3xl border border-cab-100 bg-white p-6 shadow-card"
+            className="premium-card section-reveal p-6"
           >
             <dt className="font-display text-lg font-semibold text-cab-950">
               {item.q}
@@ -57,6 +65,7 @@ export default function SssPage() {
           </div>
         ))}
       </dl>
+      </div>
     </div>
   );
 }

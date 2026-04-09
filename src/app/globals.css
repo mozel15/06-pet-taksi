@@ -20,3 +20,85 @@ body {
 ::selection {
   @apply bg-brand-400/90 text-cab-950;
 }
+
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.45); }
+  100% { box-shadow: 0 0 0 18px rgba(250, 204, 21, 0); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-140%); }
+  100% { transform: translateX(140%); }
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 15px 40px -25px rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(6px);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.premium-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-140%);
+  background: linear-gradient(115deg, transparent, rgba(250, 204, 21, 0.2), transparent);
+  pointer-events: none;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(250, 204, 21, 0.55);
+  box-shadow: 0 24px 45px -26px rgba(10, 10, 10, 0.45);
+}
+
+.premium-card:hover::after {
+  animation: shine 900ms ease;
+}
+
+.section-reveal {
+  animation: float-up 7s ease-in-out infinite;
+}
+
+.logo-core {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 2.9rem;
+  width: 2.9rem;
+  border-radius: 1rem;
+  background: #0a0a0a;
+  color: #facc15;
+  font-weight: 700;
+  box-shadow: 0 10px 22px -14px rgba(10, 10, 10, 0.9);
+}
+
+.logo-core::before,
+.logo-core::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 1.1rem;
+  pointer-events: none;
+}
+
+.logo-core::before {
+  border: 1px solid rgba(250, 204, 21, 0.65);
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+.logo-core::after {
+  inset: 5px;
+  border-radius: 0.7rem;
+  border: 1px dashed rgba(250, 204, 21, 0.35);
+}

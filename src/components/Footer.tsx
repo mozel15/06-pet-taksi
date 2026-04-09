@@ -31,7 +31,7 @@ export function Footer() {
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">İletişim</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={telHref(site.phoneDigits)} className="hover:text-brand-300">{site.phoneDisplay}</a></li>
-            <li><a href={wa} target="_blank" rel="noreferrer" className="hover:text-brand-300">WhatsApp hattina yaz</a></li>
+            <li><a href={wa} target="_blank" rel="noreferrer" className="hover:text-brand-300">WhatsApp hattına yaz</a></li>
             <li><a href={`mailto:${site.email}`} className="hover:text-brand-300">{site.email}</a></li>
           </ul>
         </div>

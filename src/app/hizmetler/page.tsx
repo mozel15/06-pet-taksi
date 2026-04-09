@@ -57,21 +57,29 @@ const detailBlocks = [
 
 export default function HizmetlerPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <p className="text-sm font-medium text-cab-700">Hizmetler</p>
-      <h1 className="mt-2 font-display text-3xl font-semibold text-cab-950 sm:text-4xl">
-        Hizmetlerimiz
-      </h1>
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-cab-800/90">
-        Evcil dostlarınız için güvenli, konforlu ve özenli taşıma. Aşağıda sunduğumuz
-        başlıklar özet bilgidir; kesin plan ve fiyat için iletişime geçmeniz yeterli.
-      </p>
+    <div className="pb-16">
+      <section className="relative overflow-hidden border-b border-cab-200 bg-cab-950 text-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
+          <p className="inline-flex rounded-full border border-brand-500/40 bg-cab-900/75 px-3 py-1 text-xs font-semibold tracking-wider text-brand-300">
+            HİZMETLER
+          </p>
+          <h1 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+            Profesyonel pet transfer paketleri
+          </h1>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-cab-200 sm:text-base">
+            Ankara içi ve Türkiye geneli taşımalar için modüler bir operasyon yapısı
+            sunuyoruz. İhtiyacınıza göre hizmet başlığını belirleyip size net plan
+            ve zamanlama iletiyoruz.
+          </p>
+        </div>
+      </section>
 
-      <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-4 pt-14 sm:px-6">
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {highlights.map((item) => (
           <li
             key={item.title}
-            className="flex flex-col rounded-2xl border border-cab-200 bg-white p-5 shadow-card transition hover:border-brand-400/50"
+            className="premium-card section-reveal flex flex-col p-5"
           >
             <span className="text-2xl" aria-hidden>
               {item.emoji}
@@ -93,7 +101,7 @@ export default function HizmetlerPage() {
         {detailBlocks.map((item) => (
           <li
             key={item.title}
-            className="rounded-3xl border border-cab-100 bg-brand-50/40 p-6"
+            className="premium-card p-6"
           >
             <h3 className="font-display text-lg font-semibold text-cab-950">
               {item.title}
@@ -105,7 +113,7 @@ export default function HizmetlerPage() {
         ))}
       </ul>
 
-      <div className="mt-10 rounded-3xl border border-cab-200 bg-white p-6 sm:p-8">
+      <div className="premium-card mt-10 p-6 sm:p-8">
         <p className="text-sm font-semibold text-cab-950">Not</p>
         <p className="mt-2 text-sm text-cab-800/85">
           Bu sayfa bilgilendirme amaçlıdır. Fiyat, müsaitlik ve özel talepler için{" "}
@@ -117,6 +125,7 @@ export default function HizmetlerPage() {
           </Link>{" "}
           üzerinden yazmanız yeterli.
         </p>
+      </div>
       </div>
     </div>
   );
