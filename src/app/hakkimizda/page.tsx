@@ -29,7 +29,7 @@ export default function HakkimizdaPage() {
         </p>
         <p>
           Hedefimiz, her transferde aynı kalite standardını koruyarak uzun vadede
-          Ankara'nın güven veren pet taksi markalarından biri olmaktır.
+          Ankara&apos;nın güven veren pet taksi markalarından biri olmaktır.
         </p>
       </div>
     </div>
