@@ -28,8 +28,8 @@ export default function HakkimizdaPage() {
           üzerinden kişiselleştirilir.
         </p>
         <p>
-          Marka adınız veya işletme detaylarınız netleştikçe bu metni birlikte
-          güncelleyebilir, fotoğraf ve referans ekleyebilirsiniz.
+          Hedefimiz, her transferde aynı kalite standardını koruyarak uzun vadede
+          Ankara'nın güven veren pet taksi markalarından biri olmaktır.
         </p>
       </div>
     </div>

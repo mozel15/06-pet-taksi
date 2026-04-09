@@ -1,13 +1,13 @@
-# 06 Pet Taksi — Web sitesi
+﻿# Kılıç Ankara Pet Taksi — Web sitesi
 
-Ankara merkezli, Türkiye geneli pet taksi için sade vitrin sitesi (Next.js + Tailwind CSS).
+Ankara merkezli, Turkiye geneli pet taksi icin profesyonel vitrin sitesi (Next.js + Tailwind CSS).
 
 ## Gereksinimler
 
-- [Node.js](https://nodejs.org/) **LTS** sürümü
+- [Node.js](https://nodejs.org/) **LTS** surumu
 - npm (Node ile gelir)
 
-İsteğe bağlı: Git, GitHub, [Vercel](https://vercel.com/) hesabı (yayın için).
+Istege bagli: Git, GitHub, [Vercel](https://vercel.com/) hesabi (yayin icin).
 
 ## Kurulum
 
@@ -16,29 +16,29 @@ cd 06-pet-taksi
 npm install
 ```
 
-`.env.local` dosyası oluşturup `.env.example` içeriğini kopyalayın; telefon ve WhatsApp numaralarını güncelleyin.
+`.env.local` dosyasi olusturup `.env.example` icerigini kopyalayin; telefon ve WhatsApp numaralarini guncelleyin.
 
 ```bash
 copy .env.example .env.local
 ```
 
-Geliştirme sunucusu:
+Gelistirme sunucusu:
 
 ```bash
 npm run dev
 ```
 
-Tarayıcıda [http://localhost:3000](http://localhost:3000) açın.
+Tarayicida [http://localhost:3000](http://localhost:3000) acin.
 
-## Yayın (özet)
+## Yayin (ozet)
 
-1. Projeyi GitHub’a gönderin.
-2. [Vercel](https://vercel.com/)’de “Import Project” ile repo’yu bağlayın.
-3. Ortam değişkenlerini Vercel panelinden girin (`NEXT_PUBLIC_*`).
-4. Alan adınızı Vercel’e yönlendirin (DNS).
+1. Projeyi GitHub'a gonderin.
+2. [Vercel](https://vercel.com/)'de "Import Project" ile repo'yu baglayin.
+3. Ortam degiskenlerini Vercel panelinden girin (`NEXT_PUBLIC_*`).
+4. Alan adinizi Vercel'e yonlendirin (DNS).
 
-## İçerik
+## Icerik
 
-- Ana sayfa, Hizmetler, Hakkımızda, İletişim, SSS (`/sss`)
-- Sabit WhatsApp ve arama butonları
-- İletişim bilgileri `src/lib/site.ts` ve `.env.local` ile yönetilir
+- Ana sayfa, Hizmetler, Hakkimizda, Iletisim, SSS (`/sss`)
+- Sabit WhatsApp ve arama butonlari
+- Iletisim bilgileri `src/lib/site.ts` ve `.env.local` ile yonetilir

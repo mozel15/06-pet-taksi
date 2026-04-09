@@ -1,10 +1,10 @@
-export const site = {
-  name: "06 Pet Taksi",
-  shortName: "06 Pet Taksi",
+﻿export const site = {
+  name: "Kılıç Ankara Pet Taksi",
+  shortName: "Kılıç Pet Taksi",
   tagline:
-    "Ankara merkezli, sevgi ve özenle pet taşıma — şehir içi ve Türkiye geneli.",
+    "Ankara merkezli, Türkiye geneli profesyonel pet transfer hizmeti.",
   description:
-    "06 Pet Taksi: Evcil dostlarınız için güvenli, konforlu taşıma. Telefon veya WhatsApp ile hemen bilgi alın; randevu ve rotayı birlikte planlayalım.",
+    "Kılıç Ankara Pet Taksi: Evcil dostlarınız için güvenli, konforlu ve planlı taşıma. Şehir içi ve şehirler arası transfer için telefon veya WhatsApp ile hemen bilgi alın.",
   city: "Ankara",
   country: "Türkiye",
   /** Ekranda gösterilecek */
@@ -12,7 +12,7 @@ export const site = {
   /** tel: ve WhatsApp için sadece rakamlar, ülke koduyla */
   phoneDigits: process.env.NEXT_PUBLIC_PHONE_DIGITS ?? "905432464879",
   whatsappDigits: process.env.NEXT_PUBLIC_WHATSAPP_DIGITS ?? "905432464879",
-  email: process.env.NEXT_PUBLIC_EMAIL ?? "info@06pettaksi.com",
+  email: process.env.NEXT_PUBLIC_EMAIL ?? "info@kilicankarapettaksi.com",
   social: {
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM ?? "",
   },
@@ -23,8 +23,6 @@ export function telHref(digits: string) {
 }
 
 export function whatsappHref(digits: string, message?: string) {
-  const q = message
-    ? `?text=${encodeURIComponent(message)}`
-    : "";
+  const q = message ? `?text=${encodeURIComponent(message)}` : "";
   return `https://wa.me/${digits.replace(/\D/g, "")}${q}`;
 }

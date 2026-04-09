@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import { site, telHref, whatsappHref } from "@/lib/site";
 
 const defaultMsg =
-  "Merhaba, 06 Pet Taksi hakkında bilgi almak / randevu oluşturmak istiyorum.";
+  "Merhaba, Kılıç Ankara Pet Taksi hakkında bilgi almak / randevu oluşturmak istiyorum.";
 
 export function FloatingContact() {
   const phone = telHref(site.phoneDigits);

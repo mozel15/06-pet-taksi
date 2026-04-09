@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     icon: "/icon.svg",
   },
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://06pettaksi.example.com",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kilicankarapettaksi.example.com",
   ),
   title: {
-    default: `${site.name} | Ankara Pet Taksi — Türkiye geneli`,
+    default: `${site.name} | Ankara pet taksi`,
     template: `%s | ${site.name}`,
   },
   description: site.description,

@@ -1,216 +1,206 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { HeroPattern } from "@/components/HeroPattern";
 import { site, telHref, whatsappHref } from "@/lib/site";
 
+const highlights = [
+  { title: "Aynı gün planlama", value: "Hızlı dönüş" },
+  { title: "Hizmet kapsamı", value: "Ankara + Türkiye" },
+  { title: "İletişim", value: "Telefon + WhatsApp" },
+];
+
 const services = [
   {
-    emoji: "🐕",
-    title: "Şehir içi transfer",
-    text: "Ankara’da adresler arası güvenli ulaşım; randevuya uygun saatler ve net bilgilendirme.",
+    title: "Şehir içi profesyonel transfer",
+    text: "Ankara içindeki adresler arasında can dostunuzun konforunu önceleyen, planlı ve dikkatli yolculuk.",
   },
   {
-    emoji: "🚐",
-    title: "Şehirler arası",
-    text: "Türkiye genelinde önceden planlanan yolculuklar — mesafe ve güzergâha göre teklif.",
+    title: "Şehirler arası organizasyon",
+    text: "Türkiye genelinde tarih, güzergah ve mola planına göre özel olarak kurgulanan transfer süreci.",
   },
   {
-    emoji: "🏥",
-    title: "Özel durumlar",
-    text: "Veteriner, bakım veya terminallere özenli transfer; ihtiyaca göre rota.",
+    title: "Veteriner ve bakım randevuları",
+    text: "Kontrol, tedavi veya bakım noktalarına zamanında ulaşım için düzenli koordinasyon.",
   },
 ];
 
-const trust = [
+const differentiators = [
   {
-    title: "Sakin sürüş",
-    text: "Stresi azaltmak için sakin tempo ve dikkatli güzergâh tercihi.",
+    title: "Planlı süreç",
+    text: "Randevu öncesi saat, rota ve özel notlar netleştirilir; süreç adım adım yönetilir.",
   },
   {
-    title: "Hijyen ve konfor",
-    text: "Taşıma sırasında temiz ortam; taşıyıcı ve güvenlik önceliğimizdir.",
+    title: "Güven odaklı yaklaşım",
+    text: "Sakin sürüş, dikkatli taşıma ve iletişimde şeffaflık ile daha huzurlu bir deneyim.",
   },
   {
-    title: "Doğrudan iletişim",
-    text: "WhatsApp veya telefonla hızlı yanıt; tarih ve adresi birlikte netleştiririz.",
+    title: "Kurumsal görünüm",
+    text: "Küçük bir işletme disipliniyle değil, marka bilinciyle hareket eden profesyonel hizmet anlayışı.",
   },
 ];
 
-const comingSoon = [
+const processSteps = [
   {
-    title: "Rota ve süre özeti",
-    text: "Yakında: planlanan yolculuk için tahmini süre ve güzergâh bilgisi.",
+    title: "1) İletişim",
+    text: "Telefon veya WhatsApp üzerinden tarih, saat ve adres bilgilerinizi paylaşın.",
   },
   {
-    title: "Kampanyalar",
-    text: "Yakında: dönemsel indirimler ve sabit hatlar için duyurular.",
+    title: "2) Plan",
+    text: "Güzergah, tahmini süre ve koşullar birlikte netleştirilir.",
   },
   {
-    title: "Duyurular",
-    text: "Yakında: yoğun günler ve müsaitlik güncellemeleri burada olacak.",
+    title: "3) Transfer",
+    text: "Belirlenen zamanda güvenli, özenli ve kontrollü yolculuk gerçekleştirilir.",
   },
+];
+
+const nextPhase = [
+  "Operasyon duyuruları ve yoğunluk takvimi",
+  "Bölgesel kampanya ve sadakat avantajları",
+  "Rota ve süre bilgisi için daha gelişmiş içerik",
 ];
 
 export default function HomePage() {
   const phone = telHref(site.phoneDigits);
   const wa = whatsappHref(
     site.whatsappDigits,
-    "Merhaba, 06 Pet Taksi için bilgi almak istiyorum.",
+    "Merhaba, Kılıç Ankara Pet Taksi hizmetleriniz hakkında bilgi almak istiyorum.",
   );
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-cab-200 bg-gradient-to-b from-brand-50 to-white">
+      <section className="relative isolate overflow-hidden border-b border-cab-200 bg-cab-950 text-white">
         <HeroPattern />
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:py-28">
-          <div className="max-w-2xl">
-            <p className="inline-flex items-center gap-2 rounded-full border border-cab-200 bg-white/90 px-3 py-1 text-xs font-medium text-cab-900 shadow-sm ring-2 ring-brand-400/30">
-              <span aria-hidden>📍</span> Ankara merkezli · Türkiye geneli
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-24">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-brand-500/45 bg-cab-900/70 px-3 py-1 text-xs font-semibold tracking-wide text-brand-300">
+              <span aria-hidden>●</span> KILIÇ ANKARA PET TAKSİ
             </p>
-            <h1 className="mt-6 font-display text-4xl font-semibold tracking-tight text-cab-950 sm:text-5xl">
-              Evcil dostlarınız{" "}
-              <span className="text-brand-600">yolculukta güvende</span>
+            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Ankara merkezli,
+              <span className="block text-brand-400">premium pet transfer deneyimi</span>
             </h1>
-            <p className="mt-5 text-lg font-medium leading-relaxed text-cab-900">
-              Her yolculuk özen ister. 06 Pet Taksi ile can dostunuzu şehir içi ve
-              şehirler arası güvenle taşıyoruz — sevgiyle yaklaşan, net iletişim
-              kuran bir ekip.
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-cab-800/90">
-              Randevu, rota ve ücret için tek yapmanız gereken aramak veya WhatsApp
-              mesajı bırakmak; size en uygun planı birlikte oluşturalım.
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-cab-200 sm:text-lg">
+              Küçük dostunuzun yolculuğunu tesadüfe bırakmayın. Kılıç Ankara Pet Taksi,
+              şehir içi ve şehirler arası taşımada planlı operasyon, net iletişim ve
+              güven odaklı hizmet sunar.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={wa}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-black/15 transition hover:brightness-95"
+                className="inline-flex items-center justify-center rounded-full bg-brand-400 px-6 py-3 text-sm font-semibold text-cab-950 transition hover:bg-brand-300"
               >
-                WhatsApp ile yaz
+                WhatsApp ile hızlı teklif al
               </a>
               <a
                 href={phone}
-                className="inline-flex items-center justify-center rounded-full bg-cab-950 px-6 py-3 text-sm font-semibold text-brand-400 ring-2 ring-brand-500/50 transition hover:bg-cab-900"
+                className="inline-flex items-center justify-center rounded-full border border-cab-500 bg-cab-900 px-6 py-3 text-sm font-semibold text-white transition hover:border-brand-400 hover:text-brand-300"
               >
-                Hemen ara
+                Hemen ara: {site.phoneDisplay}
               </a>
-              <Link
-                href="/hizmetler"
-                className="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-cab-900 underline-offset-4 hover:underline"
-              >
-                Hizmetleri incele
-              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-cab-700/70 bg-cab-900/75 p-6 shadow-soft backdrop-blur">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">
+              Hizmet özeti
+            </p>
+            <ul className="mt-5 space-y-3">
+              {highlights.map((item) => (
+                <li
+                  key={item.title}
+                  className="flex items-center justify-between rounded-xl border border-cab-700 bg-cab-950/80 px-4 py-3"
+                >
+                  <span className="text-sm text-cab-300">{item.title}</span>
+                  <span className="text-sm font-semibold text-brand-300">{item.value}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 rounded-xl border border-brand-500/40 bg-brand-500/10 p-4 text-sm text-brand-200">
+              İşletmenizin itibarı için tutarlı, profesyonel ve güven veren bir transfer deneyimi.
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="font-display text-2xl font-semibold text-cab-950 sm:text-3xl">
-          Biz kimiz?
-        </h2>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-cab-800/90">
-          Küçük dostlarınızın yol arkadaşıyız. Taşıma değil, güven ve sakinlik
-          sunmayı önemsiyoruz: doğru zamanlama, temiz ve konforlu ortam, yol boyu
-          net haber. Merkezimiz Ankara; planlı organizasyonla Türkiye genelinde
-          hizmet veriyoruz.
-        </p>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="font-display text-2xl font-semibold text-cab-950 sm:text-3xl">
-              Neler yapıyoruz?
-            </h2>
-            <p className="mt-2 max-w-xl text-cab-800/80">
-              İhtiyacınıza göre şehir içi, şehirler arası ve özel adres transferleri.
-            </p>
-          </div>
-          <Link
-            href="/iletisim"
-            className="text-sm font-semibold text-cab-900 hover:text-brand-700"
-          >
-            İletişim sayfası →
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {services.map((s) => (
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
+        <div className="grid gap-6 md:grid-cols-3">
+          {services.map((item) => (
             <article
-              key={s.title}
-              className="rounded-3xl border border-cab-100 bg-white p-6 shadow-card"
+              key={item.title}
+              className="rounded-3xl border border-cab-200 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-brand-400/70"
             >
-              <p className="text-2xl" aria-hidden>
-                {s.emoji}
-              </p>
-              <h3 className="mt-3 font-display text-lg font-semibold text-cab-950">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-cab-800/85">
-                {s.text}
-              </p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Hizmet</p>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-cab-950">{item.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-cab-700">{item.text}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="border-y border-cab-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="font-display text-2xl font-semibold text-cab-950 sm:text-3xl">
-            Neden bizi tercih etmelisiniz?
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {trust.map((t) => (
-              <div
-                key={t.title}
-                className="rounded-2xl border border-cab-100 bg-brand-50/60 p-5"
-              >
-                <p className="text-sm font-semibold text-cab-950">{t.title}</p>
-                <p className="mt-2 text-sm text-cab-800/85">{t.text}</p>
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Neden biz</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-cab-950">Güven, disiplin ve iletişim</h2>
+            </div>
+            <Link href="/hizmetler" className="text-sm font-semibold text-cab-900 underline-offset-4 hover:text-brand-700 hover:underline">
+              Tüm hizmet detaylarını gör
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {differentiators.map((item) => (
+              <div key={item.title} className="rounded-2xl bg-sand-50 p-5 ring-1 ring-cab-100">
+                <h3 className="font-display text-xl font-semibold text-cab-950">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-cab-700">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-cab-200 bg-gradient-to-b from-white to-brand-50/40">
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
+        <div className="rounded-3xl border border-cab-200 bg-white p-6 shadow-card sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Süreç</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold text-cab-950">Transfer nasıl ilerler?</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {processSteps.map((step) => (
+              <div key={step.title} className="rounded-2xl border border-cab-200 bg-cab-50 p-5">
+                <h3 className="text-sm font-semibold text-cab-950">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-cab-700">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-cab-200 bg-gradient-to-b from-white to-brand-50/40">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <h2 className="font-display text-2xl font-semibold text-cab-950 sm:text-3xl">
-            Yakında
-          </h2>
-          <p className="mt-2 max-w-2xl text-cab-800/85">
-            Sitemizi ve hizmetlerimizi geliştirmeye devam ediyoruz. Aşağıdakiler
-            üzerinde çalışıyoruz:
+          <h2 className="font-display text-3xl font-semibold text-cab-950">Yakında</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-cab-700">
+            Marka gücünü adım adım büyütüyoruz. Bir sonraki fazda web sitemizi daha operasyonel hale getireceğiz.
           </p>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-            {comingSoon.map((item) => (
-              <li
-                key={item.title}
-                className="rounded-2xl border border-dashed border-cab-300 bg-white/80 px-4 py-5 text-center shadow-sm"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">
-                  Yakında
-                </p>
-                <p className="mt-2 font-display text-base font-semibold text-cab-950">
-                  {item.title}
-                </p>
-                <p className="mt-2 text-xs leading-relaxed text-cab-700">
-                  {item.text}
-                </p>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-3">
+            {nextPhase.map((item) => (
+              <li key={item} className="rounded-xl border border-dashed border-cab-300 bg-white/90 px-4 py-4 text-sm text-cab-800">
+                {item}
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="overflow-hidden rounded-[2rem] border-2 border-brand-500 bg-gradient-to-br from-cab-950 via-cab-900 to-cab-950 px-6 py-12 text-center text-white shadow-soft sm:px-12">
-          <h2 className="font-display text-2xl font-semibold text-brand-400 sm:text-3xl">
-            Bugün rezervasyon veya bilgi alın
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
+        <div className="overflow-hidden rounded-[2rem] border border-brand-500/50 bg-gradient-to-br from-cab-950 via-cab-900 to-cab-950 px-6 py-12 text-center text-white shadow-soft sm:px-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">Randevu ve bilgi</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">
+            Bugün iletişime geçin
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-cab-200">
-            Arayın veya WhatsApp üzerinden tarih ve adresinizi yazın; size en kısa
-            sürede dönüş yapalım.
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-cab-200">
+            Uygun tarih ve rota için telefonla arayın veya WhatsApp üzerinden detayları paylaşın.
+            Hızlı şekilde geri dönüş sağlayalım.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
@@ -227,6 +217,12 @@ export default function HomePage() {
             >
               Telefon: {site.phoneDisplay}
             </a>
+            <Link
+              href="/iletisim"
+              className="inline-flex rounded-full border border-cab-600 px-6 py-3 text-sm font-semibold text-cab-100 transition hover:border-brand-400 hover:text-brand-300"
+            >
+              İletişim sayfası
+            </Link>
           </div>
         </div>
       </section>
