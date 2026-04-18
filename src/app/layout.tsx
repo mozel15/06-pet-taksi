@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
 import { site } from "@/lib/site";
+import { getPublicSiteUrl } from "@/lib/publicSiteUrl";
 import { JsonLdOrganization } from "@/lib/seo";
 
 const inter = Inter({
@@ -24,9 +25,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kilicankarapettaksi.example.com",
-  ),
+  metadataBase: new URL(getPublicSiteUrl()),
   title: {
     default: `${site.name} | Ankara pet taksi`,
     template: `%s | ${site.name}`,

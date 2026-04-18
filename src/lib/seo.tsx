@@ -1,11 +1,8 @@
 import { site } from "@/lib/site";
-
-function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://kilicankarapettaksi.example.com";
-}
+import { getPublicSiteUrl } from "@/lib/publicSiteUrl";
 
 export function JsonLdOrganization() {
-  const url = getSiteUrl();
+  const url = getPublicSiteUrl();
   const data = {
     "@context": "https://schema.org",
     "@graph": [
