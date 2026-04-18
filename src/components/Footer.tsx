@@ -23,7 +23,9 @@ export function Footer() {
             <li><Link href="/hizmetler" className="hover:text-brand-300">Hizmetler</Link></li>
             <li><Link href="/hakkimizda" className="hover:text-brand-300">Hakkımızda</Link></li>
             <li><Link href="/sss" className="hover:text-brand-300">SSS</Link></li>
+            <li><Link href="/rezervasyon" className="hover:text-brand-300">Rezervasyon</Link></li>
             <li><Link href="/iletisim" className="hover:text-brand-300">İletişim</Link></li>
+            <li><Link href="/gizlilik" className="hover:text-brand-300">Gizlilik</Link></li>
           </ul>
         </div>
 

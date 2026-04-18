@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
 import { site } from "@/lib/site";
+import { JsonLdOrganization } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,11 +32,31 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  keywords: [
+    "pet taksi",
+    "Ankara pet taksi",
+    "evcil hayvan transfer",
+    "şehirler arası pet transfer",
+    "WhatsApp ile pet taksi",
+    site.shortName,
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: site.name,
     description: site.description,
     locale: "tr_TR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -47,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${inter.variable} ${display.variable}`}>
       <body className="page-shell min-h-dvh font-sans">
+        <JsonLdOrganization />
         <Header />
         <main>{children}</main>
         <Footer />

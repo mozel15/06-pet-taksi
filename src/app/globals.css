@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+:focus-visible {
+  outline: 2px solid rgba(250, 204, 21, 0.75);
+  outline-offset: 2px;
+}
+
 body {
-  @apply text-ink antialiased;
+  @apply antialiased text-cab-100;
   background-color: #0a0a0a;
   background-image:
     radial-gradient(circle at 10% -10%, rgba(250, 204, 21, 0.12), transparent 28%),

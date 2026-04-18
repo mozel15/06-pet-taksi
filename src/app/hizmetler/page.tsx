@@ -116,14 +116,15 @@ export default function HizmetlerPage() {
       <div className="premium-card-dark mt-10 p-6 sm:p-8">
         <p className="text-sm font-semibold text-white">Not</p>
         <p className="mt-2 text-sm text-cab-200">
-          Bu sayfa bilgilendirme amaçlıdır. Fiyat, müsaitlik ve özel talepler için{" "}
-          <Link
-            href="/iletisim"
-            className="font-semibold text-brand-300 underline hover:text-brand-200"
-          >
-            iletişim
+          Bu sayfa bilgilendirme amaçlıdır. Fiyat, müsaitlik ve özel talepler için önerilen akış:{" "}
+          <Link href="/rezervasyon" className="font-semibold text-brand-300 underline hover:text-brand-200">
+            rezervasyon formu
           </Link>{" "}
-          üzerinden yazmanız yeterli.
+          veya{" "}
+          <Link href="/iletisim" className="font-semibold text-brand-300 underline hover:text-brand-200">
+            WhatsApp / iletişim
+          </Link>
+          .
         </p>
       </div>
       </div>

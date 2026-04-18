@@ -4,7 +4,7 @@
   tagline:
     "Ankara merkezli, Türkiye geneli profesyonel pet transfer hizmeti.",
   description:
-    "Kılıç Ankara Pet Taksi: Evcil dostlarınız için güvenli, konforlu ve planlı taşıma. Şehir içi ve şehirler arası transfer için telefon veya WhatsApp ile hemen bilgi alın.",
+    "Kılıç Ankara Pet Taksi: Evcil dostlarınız için güvenli, konforlu ve planlı taşıma. Ankara merkezli operasyon; şehir içi ve şehirler arası transferde teklif ve koordinasyon için WhatsApp birincil kanaldır — telefon ile de ulaşabilirsiniz.",
   city: "Ankara",
   country: "Türkiye",
   /** Ekranda gösterilecek */
