@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { createPageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Gizlilik ve aydınlatma",
   description: `${site.name} — kişisel verilerin işlenmesi hakkında bilgilendirme.`,
-};
+  path: "/gizlilik",
+});
 
 export default function GizlilikPage() {
   return (

@@ -1,13 +1,9 @@
-﻿"use client";
-
-import { site, telHref, whatsappHref } from "@/lib/site";
-
-const defaultMsg =
-  "Merhaba, Kılıç Ankara Pet Taksi hakkında bilgi almak / randevu oluşturmak istiyorum.";
+﻿import { site, telHref, whatsappHref } from "@/lib/site";
+import { whatsappMessages } from "@/config/constants";
 
 export function FloatingContact() {
   const phone = telHref(site.phoneDigits);
-  const wa = whatsappHref(site.whatsappDigits, defaultMsg);
+  const wa = whatsappHref(site.whatsappDigits, whatsappMessages.generalInfo);
 
   return (
     <div
@@ -18,7 +14,7 @@ export function FloatingContact() {
       <a
         href={wa}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-900/25 transition hover:brightness-95"
       >
         <span className="text-lg" aria-hidden>

@@ -39,9 +39,6 @@ export const metadata: Metadata = {
     "WhatsApp ile pet taksi",
     site.shortName,
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: site.name,
     description: site.description,

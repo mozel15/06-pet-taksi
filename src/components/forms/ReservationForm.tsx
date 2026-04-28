@@ -31,6 +31,17 @@ export function ReservationForm() {
 
   return (
     <form action={formAction} className="space-y-6" noValidate aria-busy={pending}>
+      <div className="hidden" aria-hidden>
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+        />
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className={labelClass} htmlFor="fullName">
@@ -126,9 +137,17 @@ export function ReservationForm() {
           <label className={labelClass} htmlFor="preferredDate">
             Tercih edilen tarih *
           </label>
-          <input id="preferredDate" name="preferredDate" type="date" className={inputClass} />
+          <input
+            id="preferredDate"
+            name="preferredDate"
+            type="date"
+            className={inputClass}
+            required
+            aria-invalid={!!fieldError(state, "preferredDate")}
+            aria-describedby={fieldError(state, "preferredDate") ? "err-preferredDate" : undefined}
+          />
           {fieldError(state, "preferredDate") ? (
-            <p className="mt-1 text-xs text-red-300" role="alert">
+            <p id="err-preferredDate" className="mt-1 text-xs text-red-300" role="alert">
               {fieldError(state, "preferredDate")}
             </p>
           ) : null}
@@ -145,10 +164,12 @@ export function ReservationForm() {
             name="fromAddress"
             rows={3}
             className={inputClass}
+            required
             aria-invalid={!!fieldError(state, "fromAddress")}
+            aria-describedby={fieldError(state, "fromAddress") ? "err-fromAddress" : undefined}
           />
           {fieldError(state, "fromAddress") ? (
-            <p className="mt-1 text-xs text-red-300" role="alert">
+            <p id="err-fromAddress" className="mt-1 text-xs text-red-300" role="alert">
               {fieldError(state, "fromAddress")}
             </p>
           ) : null}
@@ -162,10 +183,12 @@ export function ReservationForm() {
             name="toAddress"
             rows={3}
             className={inputClass}
+            required
             aria-invalid={!!fieldError(state, "toAddress")}
+            aria-describedby={fieldError(state, "toAddress") ? "err-toAddress" : undefined}
           />
           {fieldError(state, "toAddress") ? (
-            <p className="mt-1 text-xs text-red-300" role="alert">
+            <p id="err-toAddress" className="mt-1 text-xs text-red-300" role="alert">
               {fieldError(state, "toAddress")}
             </p>
           ) : null}
@@ -182,9 +205,12 @@ export function ReservationForm() {
           rows={3}
           placeholder="Tür, ırk, yaş, ağırlık, özel notlar..."
           className={inputClass}
+          required
+          aria-invalid={!!fieldError(state, "petInfo")}
+          aria-describedby={fieldError(state, "petInfo") ? "err-petInfo" : undefined}
         />
         {fieldError(state, "petInfo") ? (
-          <p className="mt-1 text-xs text-red-300" role="alert">
+          <p id="err-petInfo" className="mt-1 text-xs text-red-300" role="alert">
             {fieldError(state, "petInfo")}
           </p>
         ) : null}
@@ -204,6 +230,8 @@ export function ReservationForm() {
           type="checkbox"
           value="on"
           className="mt-1 h-4 w-4 rounded border-cab-600 bg-cab-950 text-brand-400 focus:ring-brand-400/50"
+          aria-invalid={!!fieldError(state, "kvkk")}
+          aria-describedby={fieldError(state, "kvkk") ? "err-kvkk" : undefined}
         />
         <label htmlFor="kvkk" className="text-sm text-cab-200">
           <Link href="/gizlilik" className="font-semibold text-brand-300 underline-offset-4 hover:underline">
@@ -213,8 +241,13 @@ export function ReservationForm() {
         </label>
       </div>
       {fieldError(state, "kvkk") ? (
-        <p className="text-xs text-red-300" role="alert">
+        <p id="err-kvkk" className="text-xs text-red-300" role="alert">
           {fieldError(state, "kvkk")}
+        </p>
+      ) : null}
+      {state.status === "error" && state.formError ? (
+        <p className="rounded-xl border border-red-500/50 bg-red-500/10 px-4 py-3 text-xs text-red-200" role="alert">
+          {state.formError}
         </p>
       ) : null}
 
@@ -237,7 +270,7 @@ export function ReservationForm() {
           <a
             href={state.whatsappUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className={`${buttonClass("whatsapp")} mt-4`}
           >
             WhatsApp’ta aç ve gönder

@@ -7,13 +7,11 @@ import {
 } from "@/content/home";
 import { site, telHref, whatsappHref } from "@/lib/site";
 import { buttonClass } from "@/components/ui/buttonStyles";
+import { whatsappMessages } from "@/config/constants";
 
 export function HomePageSections() {
   const phone = telHref(site.phoneDigits);
-  const wa = whatsappHref(
-    site.whatsappDigits,
-    "Merhaba, Kılıç Ankara Pet Taksi için bilgi almak istiyorum.",
-  );
+  const wa = whatsappHref(site.whatsappDigits, whatsappMessages.homeSectionsInfo);
 
   return (
     <>
@@ -107,7 +105,7 @@ export function HomePageSections() {
             → mesajınız tek tıkla gönderilir → operasyon onayı için yine WhatsApp kullanılır.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={wa} target="_blank" rel="noreferrer" className={buttonClass("whatsapp")}>
+            <a href={wa} target="_blank" rel="noopener noreferrer" className={buttonClass("whatsapp")}>
               WhatsApp’a geç
             </a>
             <a href={phone} className={buttonClass("primary")}>

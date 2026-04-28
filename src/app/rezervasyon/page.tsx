@@ -3,17 +3,17 @@ import Link from "next/link";
 import { ReservationForm } from "@/components/forms/ReservationForm";
 import { site, whatsappHref } from "@/lib/site";
 import { buttonClass } from "@/components/ui/buttonStyles";
+import { createPageMetadata } from "@/lib/pageMetadata";
+import { whatsappMessages } from "@/config/constants";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Rezervasyon",
   description: `${site.name} — randevu talebi için form. Onay ve koordinasyon WhatsApp ile tamamlanır.`,
-};
+  path: "/rezervasyon",
+});
 
 export default function RezervasyonPage() {
-  const waQuick = whatsappHref(
-    site.whatsappDigits,
-    `Merhaba, ${site.name} için hızlıca bilgi almak / tarih sormak istiyorum.`,
-  );
+  const waQuick = whatsappHref(site.whatsappDigits, whatsappMessages.reservationQuick);
 
   return (
     <div className="pb-20">
@@ -31,7 +31,7 @@ export default function RezervasyonPage() {
             doğrudan hızlı mesaj da gönderebilirsiniz.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={waQuick} target="_blank" rel="noreferrer" className={buttonClass("whatsapp")}>
+            <a href={waQuick} target="_blank" rel="noopener noreferrer" className={buttonClass("whatsapp")}>
               WhatsApp ile hızlı yaz
             </a>
             <Link href="/iletisim" className={buttonClass("outline")}>

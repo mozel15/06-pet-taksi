@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { createPageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Sık sorulan sorular",
   description: `${site.name} SSS — pet taksi, rezervasyon ve hizmet bölgeleri hakkında sorular.`,
-};
+  path: "/sss",
+});
 
 const faqs = [
   {

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
+import { createPageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Hakkımızda",
   description: `${site.name} — Ankara merkezli, Türkiye geneli pet taksi ve güvenli taşıma.`,
-};
+  path: "/hakkimizda",
+});
 
 export default function HakkimizdaPage() {
   return (

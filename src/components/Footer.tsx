@@ -1,8 +1,10 @@
 ﻿import Link from "next/link";
 import { site, telHref, whatsappHref } from "@/lib/site";
+import { primaryNavigation, secondaryNavigation } from "@/config/navigation";
+import { whatsappMessages } from "@/config/constants";
 
 export function Footer() {
-  const wa = whatsappHref(site.whatsappDigits);
+  const wa = whatsappHref(site.whatsappDigits, whatsappMessages.generalInfo);
   const year = new Date().getFullYear();
 
   return (
@@ -19,13 +21,20 @@ export function Footer() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">Sayfalar</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/" className="hover:text-brand-300">Ana Sayfa</Link></li>
-            <li><Link href="/hizmetler" className="hover:text-brand-300">Hizmetler</Link></li>
-            <li><Link href="/hakkimizda" className="hover:text-brand-300">Hakkımızda</Link></li>
-            <li><Link href="/sss" className="hover:text-brand-300">SSS</Link></li>
-            <li><Link href="/rezervasyon" className="hover:text-brand-300">Rezervasyon</Link></li>
-            <li><Link href="/iletisim" className="hover:text-brand-300">İletişim</Link></li>
-            <li><Link href="/gizlilik" className="hover:text-brand-300">Gizlilik</Link></li>
+            {primaryNavigation.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-brand-300">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            {secondaryNavigation.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-brand-300">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -33,7 +42,7 @@ export function Footer() {
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-300">İletişim</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={telHref(site.phoneDigits)} className="hover:text-brand-300">{site.phoneDisplay}</a></li>
-            <li><a href={wa} target="_blank" rel="noreferrer" className="hover:text-brand-300">WhatsApp hattına yaz</a></li>
+            <li><a href={wa} target="_blank" rel="noopener noreferrer" className="hover:text-brand-300">WhatsApp hattına yaz</a></li>
             <li><a href={`mailto:${site.email}`} className="hover:text-brand-300">{site.email}</a></li>
           </ul>
         </div>

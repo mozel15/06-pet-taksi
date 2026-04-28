@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { createPageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Hizmetler",
   description: `${site.name} — şehir içi ve şehirler arası pet taksi, veteriner transferi ve daha fazlası.`,
-};
+  path: "/hizmetler",
+});
 
 const highlights = [
   {

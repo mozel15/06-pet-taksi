@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, telHref, whatsappHref } from "@/lib/site";
 import { buttonClass } from "@/components/ui/buttonStyles";
+import { createPageMetadata } from "@/lib/pageMetadata";
+import { whatsappMessages } from "@/config/constants";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "İletişim",
   description: `${site.name} iletişim — öncelikli kanal WhatsApp; telefon ve e-posta.`,
-};
+  path: "/iletisim",
+});
 
 export default function IletisimPage() {
   const phone = telHref(site.phoneDigits);
-  const wa = whatsappHref(
-    site.whatsappDigits,
-    `Merhaba, ${site.name} için bilgi almak istiyorum.`,
-  );
+  const wa = whatsappHref(site.whatsappDigits, whatsappMessages.contactInfo);
 
   return (
     <div className="pb-16">
@@ -46,7 +46,7 @@ export default function IletisimPage() {
             <a
               href={wa}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={`${buttonClass("whatsapp")} mt-6 inline-flex`}
             >
               WhatsApp ile yaz
